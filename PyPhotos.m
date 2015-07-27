@@ -32,8 +32,6 @@
     if (! [self isCameraAvailable]){
         return 0;
     }
-
-
     //    # 0 = photo lib
     //    # 1 = camera
     //    # 2 = SavedPhotoAlbums
@@ -53,9 +51,9 @@
     [_controller presentViewController:imagePicker animated:YES completion:nil];
 }
 
-- (void) chooseFromGallery:(char *) filename{
+- (void) chooseImageFromGallery:(char *) filename{
+    _filename = [NSString stringWithUTF8String:filename];
     // Choose images from gallery
-
     //    # 0 = photo lib
     //    # 1 = camera
     //    # 2 = SavedPhotoAlbums
@@ -154,6 +152,8 @@
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
     [picker dismissViewControllerAnimated:YES completion:NULL];
+    NSLog(@"Image saved successfully");
+    [self.delegate captureCancelled];
 }
 
 @end

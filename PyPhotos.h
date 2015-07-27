@@ -7,6 +7,7 @@
 @protocol PyPhotoDelegate <NSObject>
 
 - (void)imageCaptured;
+- (void)captureCancelled;
 
 @end
 

@@ -16,13 +16,27 @@ Then either create or update an Xcode project with the toolchain.
 ## Usage
 
     from pyPhotoLibrary import Photos
-    photos.capture_image()
+    photos.bind(
+        on_image_captured=self.on_image_captured,
+        on_capture_cancelled=self.on_capture_cancelled)
+    if photos.isCameraAvailable:
+        photos.capture_image(filename)
+    else:
+        photos.chooseFromGallery(filename)
 
 Show a standard camera interface and return the captured image.
 If the device has no camera or if the camera interface is cancelled, None
 is returned.
 
-`save_image` has not yet been exposed.
+    photos.pyPhotos
 
-	Photos.save(image)
+This `pyPhotos` attribute holds the pyobj reference to the actual objc
+class used to interface with the PhPhotolibrary 
+
+    def on_image_captured(self):
+        print "image was successfully captured"
+
+    def on_capture_cancelled(self):
+        print('Cancelled!')
+
 
