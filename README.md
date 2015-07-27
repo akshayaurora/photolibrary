@@ -1,6 +1,7 @@
-# iOs PHPhotoLibrary Python wrapper
+# iOS PHPhotoLibrary Python wrapper
 
-This wrapper allow you to use the PHPhotoLibrary on iOS with Python.
+This wrapper allows you to use the PHPhotoLibrary on iOS with Python.
+This is just a custom wrapper for a couple of functions not a complete wrapper.
 
 ## Installation
 
