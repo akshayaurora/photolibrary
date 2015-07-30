@@ -9,7 +9,7 @@ This is just a custom wrapper for a couple of functions not a complete wrapper.
 
 You need to use the latest kivy-ios toolchain:
 
-    ./toolchain.py build pyPhotoLibrary
+    ./toolchain.py build photolibrary
 
 Then either create or update an Xcode project with the toolchain.
 
